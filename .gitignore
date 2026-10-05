@@ -1,0 +1,24 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment / secrets
+.env
+*.env
+.streamlit/secrets.toml
+profiles.yml
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Airflow
+airflow/logs/
+
+data/
+
+# macOS
+.DS_Store
