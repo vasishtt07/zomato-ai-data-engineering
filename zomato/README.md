@@ -1,15 +1,32 @@
-Welcome to your new dbt project!
+# Zomato AI Data Engineering & Analytics
 
-### Using the starter project
+An end-to-end data engineering and AI analytics project built using Zomato restaurant data.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Project Overview
 
+The project processes raw Zomato data through data ingestion, transformation, warehousing and analytics. An AI layer was also added to allow users to interact with restaurant reviews and structured data using natural language.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Architecture
+
+```text
+Raw Zomato Data
+       ↓
+Python
+       ↓
+Snowflake
+       ↓
+dbt Transformations
+       ↓
+Staging → Marts
+       ↓
+Airflow + Docker
+       ↓
+Streamlit Analytics
+       ↓
+AI Layer
+   ┌───────────────┬────────────────┐
+   │ RAG           │ Text-to-SQL    │
+   │ Reviews       │ Snowflake Data │
+   └───────────────┴────────────────┘
+       ↓
+Llama 3.2 + Ollama
